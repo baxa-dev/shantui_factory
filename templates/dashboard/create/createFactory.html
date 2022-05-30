@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="jumbotron ">
+<form method="POST" class="my-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form | crispy }}
+
+    <a href="{% url 'dashboard:factory' %}" class="btn bg-secondary">Отмена</a>
+
+    <button type="submit"  class="btn btn-primary">Отправил</button>
+</form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="jumbotron ">
+<form method="POST">
+    {% csrf_token %}
+    <h3>Вы уверены, что хотите удалить "<span class="text-danger">{{item}}</span>"?</h3>
+
+    <a href="{% url 'dashboard:stc' %}" class="btn bg-secondary">Отмена</a>
+    <button class="btn btn-danger">Отправил</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+<style>
+    .btn-primary {
+        background-color: #007bff !important;
+    }
+</style>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 col-md-12 col-sm-12 col-12 flex ai-center mb-2 px-4">
+                <h4>Завод</h4>
+                <a style="float: right;" href="{% url 'dashboard:create_factory' %}" class="btn btn-primary">Добавить</a>
+            </div>
+        </div>
+
+    {% if queryset %}
+    <div class="col-12 px-4">
+        <table class="slide table table-striped table-bordered mb-4 rounded-2">
+            <thead class="table-bordered bg-warning">
+                <tr>
+                    <th class="py-1 px-3 text-light py-3">ID</th>
+                    <th class="py-1 px-3 text-light py-3">Имя</th>
+                    <th class="py-1 px-3 text-light py-3">Изображение</th>
+                    <th class="py-1 px-3 text-light py-3">Редактировать</th>
+                    <th class="py-1 px-3 text-light py-3">Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in page_obj %}
+                    <tr>
+                        <td class="py-1 px-3">
+                            {{ object.id }}
+                        </td>
+                        <td class="py-1 px-3">
+                            {{ object.name }}
+                        </td>
+                        <td class="py-1 px-3">
+                            <img src="{{ object.image.url }}" width="100px" alt="{{ object.name }}">
+                        </td>
+                        <td class="py-1 px-3">
+                            <a href="{% url 'dashboard:update_factory' object.id %}" class="btn btn-primary">
+                                Edit
+                                 <i class="bi bi-pencil-square"></i> 
+                            </a>
+                        </td>
+                        <td class="py-1 px-3">
+                            <a href="{% url 'dashboard:delete_factory' object.id %}" class="btn bg-danger">
+                                Delete
+                                 <i class="bi bi-x"></i> 
+                            </a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+<!--Pagination-->
+        {% include "dashboard/includes/page_obj.html" %}
+<!--end of Pagination-->
+
+
+        {% else %}
+        <h1 class="slide alert alert-danger">Не найден Фабрика</h1>
+    {% endif %}
+</div>
+{% endblock %}

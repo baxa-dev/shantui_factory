@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block body %}
+<style>
+    .btn-primary {
+        background-color: #007bff !important;
+    }
+
+    .main-container{
+	border-radius: 50px;
+	width: 50%;
+    flex-grow: 8;
+    margin-top: 40px;
+    margin-bottom: 20;
+    margin-left: 40px;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+}
+
+</style>
+    <div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+            <h4>
+                Статья
+                <a style="float: right;" href="{% url 'dashboard:create_article' %}" class="btn btn-primary">Добавить</a>
+            </h4>
+        </div>
+    {% if queryset %}
+        <table class="slide tabel table-striped table-bordered mb-4">
+            <thead class="table-bordered bg-warning">
+                <tr>
+                    <th class="py-1 px-3 text-light py-3">ID</th>
+                    <th class="py-1 px-3 text-light py-3">Заголовок</th>
+                    <th class="py-1 px-3 text-light py-3">Редактировать</th>
+                    <th class="py-1 px-3 text-light py-3">Удалить</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in page_obj %}
+                    <tr>
+                        <td class="py-1 px-3">
+                            {{ object.id }}
+                        </td>
+                        <td class="py-1 px-3">
+                            {{ object.title }}
+                        </td>
+                        <td class="py-1 px-3">
+                            <a href="{% url 'dashboard:update_article' object.id %}" class="btn btn-primary">
+                                Edit
+                                 <i class="bi bi-pencil-square"></i> 
+                            </a>
+                        </td>
+                        <td class="py-1 px-3">
+                            <a href="{% url 'dashboard:delete_article' object.id %}" class="btn bg-danger">
+                                Delete
+                                 <i class="bi bi-x"></i> 
+                            </a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!--Pagination-->
+        {% include "dashboard/includes/page_obj.html" %}
+    <!--end of Pagination-->
+
+        {% else %}
+        <h1 class="slide alert alert-danger">Не найден Статья</h1>
+    {% endif %}
+</div>
+</div>
+
+{% endblock %}

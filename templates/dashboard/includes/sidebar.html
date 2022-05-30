@@ -1,0 +1,82 @@
+{% load static %}
+	<!-- Left sidebar menu start -->
+	<div class="ttr-sidebar">
+		<div class="ttr-sidebar-wrapper content-scroll">
+			<!-- side menu logo start -->
+			<div class="ttr-sidebar-logo">
+				<a style="font-size: large; color: rgb(32, 32, 32);"><strong> STT Admin </strong></a>
+				<!-- <div class="ttr-sidebar-pin-button" title="Pin/Unpin Menu">
+					<i class="material-icons ttr-fixed-icon">gps_fixed</i>
+					<i class="material-icons ttr-not-fixed-icon">gps_not_fixed</i>
+				</div> -->
+				<div class="ttr-sidebar-toggle-button">
+					<i class="ti-arrow-left"></i>
+				</div>
+			</div>
+			<!-- side menu logo end -->
+			<!-- sidebar menu start -->
+			<nav class="ttr-sidebar-navi">
+				<ul>
+					<li>
+						<a href="/" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-home"></i></span>
+		                	<span class="ttr-label">Главная</span>
+		                </a>
+		            </li>
+					
+					<li>
+						<a href="#" class="ttr-material-button">
+							<span class="ttr-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
+								<path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z"/>
+							  </svg></span>
+		                	<span class="ttr-label">Спецтехникa</span>
+		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+		                </a>
+		                <ul>
+		                	<li>
+		                		<a href="{% url 'dashboard:st' %}" class="ttr-material-button"><span class="ttr-label">Спецтехникa</span></a>
+		                	</li>
+							<li>
+		                		<a href="{% url 'dashboard:stc' %}" class="ttr-material-button"><span class="ttr-label">Спецтехникa Категория</span></a>
+		                	</li>
+							<li>
+		                		<a href="{% url 'dashboard:factory' %}" class="ttr-material-button"><span class="ttr-label">Заводы</span></a>
+		                	</li>
+		                </ul>
+		            </li>
+					<li>
+						<a href="#" class="ttr-material-button">
+							<span class="ttr-icon">
+								<img
+									src="{% static 'news.svg' %}"
+									alt=""
+									height="20"
+									width="20" />
+							</span>
+		                	<span class="ttr-label">Новости</span>
+		                	<span class="ttr-arrow-icon"><i class="fa fa-angle-down"></i></span>
+		                </a>
+		                <ul>
+		                	<li>
+		                		<a href="{% url 'dashboard:blog' %}" class="ttr-material-button"><span class="ttr-label">Новости</span></a>
+		                	</li>
+		                	<li>
+		                		<a href="{% url 'dashboard:article' %}" class="ttr-material-button"><span class="ttr-label">Статья</span></a>
+		                	</li>
+		                </ul>
+		            </li>
+					<li>
+						<a href="{% url 'dashboard:contact' %}" class="ttr-material-button">
+							<span class="ttr-icon"><i class="ti-comments"></i></span>
+		                	<span class="ttr-label">Контакт</span>
+		                </a>
+		            </li>
+		            <li class="ttr-seperate"></li>
+				</ul>
+				<!-- sidebar menu end -->
+			</nav>
+			<!-- sidebar menu end -->
+		</div>
+	</div>
+	<!-- Left sidebar menu end -->
+

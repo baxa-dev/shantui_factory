@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6">
+                    <div class="card text-dark border-0 mb-3" style="background-color: #c1cad4">
+                      <div class="card-header text-center"><b>Спецтехникa</b></div>
+                      <div class="card-body">
+                        <h3 class="card-title text-center">{{st}}</h3>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6">
+                    <div class="card text-dark border-0 mb-3" style="background-color: #c1cad4">
+                      <div class="card-header text-center"><b>Спецтехникa Категория</b></div>
+                      <div class="card-body">
+                        <h3 class="card-title text-center">{{stc}}</h3>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6">
+                    <div class="card text-dark border-0 mb-3" style="background-color: #c1cad4">
+                      <div class="card-header text-center"><b>Завод</b></div>
+                      <div class="card-body">
+                        <h3 class="card-title text-center">{{f}}</h3>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6">
+                    <div class="card text-dark border-0 mb-3" style="background-color: #c1cad4">
+                      <div class="card-header text-center"><b></b></div>
+                      <div class="card-body">
+                        <h3 class="card-title text-center">{{c}}</h3>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6">
+                    <div class="card text-dark border-0 mb-3" style="background-color: #c1cad4">
+                      <div class="card-header text-center"><b>Статья</b></div>
+                      <div class="card-body">
+                        <h3 class="card-title text-center">{{a}}</h3>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-4 col-sm-6">
+                    <div class="card text-dark border-0 mb-3" style="background-color: #c1cad4">
+                      <div class="card-header text-center"><b>Новости</b></div>
+                      <div class="card-body">
+                        <h3 class="card-title text-center">{{b}}</h3>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+{% endblock %}
